@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina del Trabajo Fnal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="navbar">
+            <a href="#" id="servicesLink">Servicios</a>
+            <a href="#" id="contactLink">Contacto</a>
+            <a href="#" id="aboutLink">Nodsotros</a>
+        </div>
+
+        
+        <div class="main-container">
+            <!-- Slider -->
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="imagen1.jpg" alt="Imagen 1">
+                    <img src="imagen2.jpg" alt="Imagen 2">
+                    <img src="imagen3.jpg" alt="Imagen 3">
+                </div>
+            </div>
+
+            
+            <button class="button" id="loginButton">Iniciiar Sesión</button>
+            <button class="button" id="registerButton">Registrarse</button>
+
+            
+            <div id="loginForm" class="form-container"></div>
+            <div id="registerForm" class="form-container"></div>
+        </div>
+    </div>
+
+    <script src="card.js"></script>
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("login.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("loginForm").innerHTML = data;
+                });
+            
+            fetch("register.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("registerForm").innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
